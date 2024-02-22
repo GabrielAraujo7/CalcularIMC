@@ -1,11 +1,15 @@
+#Coleta dos dados:
 nome = input("Seu nome: ")
 altura = float(input("Digite sua altura em metros: "))
 peso = float(input("Digite seu peso em kg: "))
 
+#Calculo do IMC:
 total = peso / (altura ** 2)
 
-with open("imc.txt", 'w') as arquivo:
-    arquivo.write("Ola "+nome+ ", seu IMC eh: "+str(total) + '\n')
+#Formatação do IMC:
+imc_formatado = f"{total:.2f}"
 
-with open("imc.txt", 'a') as arquivo:
-    arquivo.write("Ola "+nome+ ", seu IMC eh: "+str(total) + '\n')
+#Criação do txt:
+with open("imc2.txt", 'a') as arquivo:
+    #Adiciona as informações no txt:
+    arquivo.write("Ola "+nome+ ", seu IMC eh: "+str(imc_formatado) + '\n')
